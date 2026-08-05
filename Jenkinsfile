@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Checking out code from SCM'
 
-                git branch: 'main',
+                git branch: 'master',
                     credentialsId: 'github-cred',
                     url: 'https://github.com/RakeshDevOps224/JavaWebCalculator.git'
             }
