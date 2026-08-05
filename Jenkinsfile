@@ -1,6 +1,6 @@
 pipeline {
     agent {
-    label 'mynode1'
+    label 'agent1'
     }
 
     stages {
@@ -9,7 +9,7 @@ pipeline {
                 echo 'Checking out code from SCM'
 
                 git branch: 'master',
-                    credentialsId: 'github-cred',
+                    credentialsId: 'github_cred',
                     url: 'https://github.com/RakeshDevOps224/JavaWebCalculator.git'
             }
         }
