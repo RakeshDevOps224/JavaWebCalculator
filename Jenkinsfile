@@ -29,24 +29,17 @@ pipeline {
         stage('4. File System Scan (Trivy)') {
             steps {
                 echo 'Scanning project files using Trivy'
-<<<<<<< HEAD
-                sh  'trivy fs --format table -o trivy-report.txt' .
-=======
                 sh 'trivy fs --format table -o trivy-report.txt .'
->>>>>>> 6a223ba (corrporate mster)
             }
         }
-        stage('5.sonarQube code analysis'){
-          steps{
-             echo 'Running sonarQube analysis'
-             withSonarQubeEnv('sonarQube){
-              sh 'mvn sonar:sonar'
-             }
-          }
-      }
 
-
-
-
+        stage('5. SonarQube Code Analysis') {
+            steps {
+                echo 'Running SonarQube analysis'
+                withSonarQubeEnv('SonarQube') {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
     }
 }
