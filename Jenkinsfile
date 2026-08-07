@@ -1,24 +1,13 @@
-pipeline {
+pipeline{
     agent any
-
-    stages {
-        stage('Checkout Code from SCM') {
-            steps {
-                echo 'Checking out code from SCM'
-
-                git branch: 'master',
-                    credentialsId: 'github_cred',
-                    url: 'https://github.com/RakeshDevOps224/JavaWebCalculator.git'
+    stages{
+        stage('1. checkout code'){
+            steps{
+                echo 'checkout code from the source code'
+                git branch : 'master' ,
+                credentialsId : 'gitHub_cred' ,
+                url : ''
             }
         }
-         stage('mvn build'){
-             steps {
-                echo 'Building the applicatio'
-                sh 'mvn clean package'
-                  }
-            }
-       }
     }
-
-                        
-
+}
