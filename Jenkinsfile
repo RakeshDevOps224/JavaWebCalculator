@@ -36,5 +36,17 @@ pipeline {
 >>>>>>> 6a223ba (corrporate mster)
             }
         }
+        stage('5.sonarQube code analysis'){
+          steps{
+             echo 'Running sonarQube analysis'
+             withSonarQubeEnv('sonarQube){
+              sh 'mvn sonar:sonar'
+             }
+          }
+      }
+
+
+
+
     }
 }
