@@ -29,7 +29,11 @@ pipeline {
         stage('4. File System Scan (Trivy)') {
             steps {
                 echo 'Scanning project files using Trivy'
+<<<<<<< HEAD
                 sh  'trivy fs --format table -o trivy-report.txt' .
+=======
+                sh 'trivy fs --format table -o trivy-report.txt .'
+>>>>>>> 6a223ba (corrporate mster)
             }
         }
     }
